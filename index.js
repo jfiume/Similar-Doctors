@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
 
+// sets up Pug Views
 app.set('view engine', 'pug');
 app.set('views','./views');
 
+// You can assume the entire directory of doctors fits into memory.
+// Doctors have an id, name, location and specialty
 const doctors = [
   { id: 101, name: "James Gardner", location: "Marin", specialty: "Dermatology" },
   { id: 102, name: "Deirdre Hyde", location: "Sonoma", specialty: "Family" },
@@ -27,21 +30,30 @@ const doctors = [
   { id: 120, name: "David Corson-Knowles", location: "San Francisco", specialty: "Pediatrics" },
 ];
 
+// route to Doctors Index
+// displays all Doctors
 app.get('/', function(req, res){
    res.render('doctors', {doctors: doctors});
 });
 
+
+// route to Doctors Show
+// displays a single Doctor
 app.get('/:id', function(req, res){
+  // extract the id from the url
   let currDr = doctors.filter(function(dr){
     if(dr.id == req.params.id){
        return true;
      };
    });
+   // creates the array of Similar Doctors
+   // Similar is defined as having the same location and specialty as the current Doctor
    let similarDrs = doctors.filter(function(dr){
      if(dr.location === currDr[0].location && dr.specialty === currDr[0].specialty && dr !== currDr[0]){
        return true;
      };
    }).sort(function(a,b) {
+     // The Similar Doctors are sorted alphabetically by name
      if(a.name < b.name){
        return -1
      } else if (a.name > b.name){
