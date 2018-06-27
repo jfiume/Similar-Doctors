@@ -5,6 +5,10 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views','./views');
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
 // You can assume the entire directory of doctors fits into memory.
 // Doctors have an id, name, location and specialty
 const doctors = [
@@ -69,4 +73,6 @@ app.get('/:id', function(req, res){
    }
 })
 
-app.listen(3000);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
