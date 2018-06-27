@@ -1,15 +1,18 @@
 html
    head
       title Dr #{doctor.name}
+      style
+        include stylesheets/doctor.css
    body
-      span=`${doctor.name}`
-      span=`${doctor.location}`
-      span=`${doctor.specialty}`
+      a(class='button' href='/') Home
+      h2=`Dr ${doctor.name}`
+      div=`Location: ${doctor.location}`
+      div=`Specialty: ${doctor.specialty}`
+      h4 Similar Doctors
       ul
-        li
-          unless doctors.length > 0
-            span='no similar doctors found'
-          else
-            - for (let j = 0; j < doctors.length; j++)
-                span=`Dr ${doctors[j].name}`
+        unless doctors.length > 0
+          li='no similar doctors found'
+        else
+          - for (let j = 0; j < doctors.length; j++)
+              li=`Dr ${doctors[j].name}`
     

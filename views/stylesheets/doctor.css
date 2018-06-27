@@ -1,0 +1,36 @@
+body {
+  background-color: lightblue;
+  font-size: 2em;
+  color: white;
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  color: white;
+  background-color: lightcoral;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+h2 {
+  color: lightcoral;
+}
+
+div {
+  color: lightcoral;
+  margin: inherit;
+}
+
+h4 {
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin: 10px;
+  padding: 10px;
+}
