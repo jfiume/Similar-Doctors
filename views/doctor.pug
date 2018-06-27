@@ -2,9 +2,14 @@ html
    head
       title #{doctor.name}
    body
+      span=`${doctor.name}`
+      span=`${doctor.location}`
+      span=`${doctor.specialty}`
       ul
         li
-          span=`${doctor.name}`
-          span=`${doctor.location}`
-          span=`${doctor.specialty}`
+          unless doctors.length > 0
+            span='no similar doctors found'
+          else
+            - for (let j = 0; j < doctors.length; j++)
+                span=`${doctors[j].name}`
     
