@@ -1,6 +1,6 @@
 html
    head
-      title #{doctor.name}
+      title Dr #{doctor.name}
    body
       span=`${doctor.name}`
       span=`${doctor.location}`
@@ -11,5 +11,5 @@ html
             span='no similar doctors found'
           else
             - for (let j = 0; j < doctors.length; j++)
-                span=`${doctors[j].name}`
+                span=`Dr ${doctors[j].name}`
     

@@ -1,0 +1,27 @@
+body {
+  background-color: lightblue;
+  font-size: 2em;
+  color: white;
+}
+
+li {
+  margin: 10px;
+  padding: 10px;
+}
+
+span {
+  margin: inherit;
+}
+
+div {
+  margin: 10px 20px 5px 0px;
+}
+
+a {
+  color: white;
+  font-size: 2em;
+}
+
+h1 {
+  text-align: center;
+}

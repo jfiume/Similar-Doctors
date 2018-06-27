@@ -1,11 +1,15 @@
 html
    head
       title Doctors
+      style
+        include stylesheets/doctors.css
    body
+      h1 All Doctors
       ul
         - for (let i = 0; i < doctors.length; i++)
             li
-              a(href=`/${doctors[i].id}`) #{doctors[i].name}
-              span=`${doctors[i].location}`
-              span=`${doctors[i].specialty}`
+              a(href=`/${doctors[i].id}`) Dr #{doctors[i].name}
+              div
+                span=`Location: ${doctors[i].location}`
+                span=`Specialty: ${doctors[i].specialty}`
         
