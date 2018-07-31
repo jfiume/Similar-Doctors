@@ -8,4 +8,8 @@ html
       ul
         - for (let i = 0; i < doctors.length; i++)
             li
-              a(href=`/${doctors[i].id}`) Dr #{doctors[i].name}
+                a(href=`/${doctors[i].id}`) Dr #{doctors[i].name}
+                p 
+                  img(src=doctors[i].pic)
+                
+                

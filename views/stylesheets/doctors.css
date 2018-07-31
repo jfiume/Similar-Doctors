@@ -22,3 +22,10 @@ li {
 h1 {
   text-align: center;
 }
+
+ul {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
